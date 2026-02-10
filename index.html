@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | RAKOTOVAO Tiaviniaina</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="profile-header">
+            <div class="profile-img">
+                <img src="assets/profile.jpg" alt="RAKOTOVAO Tiaviniaina">
+            </div>
+            <h1>RAKOTOVAO Tiaviniaina Princio</h1>
+            <p class="subtitle">Étudiant L3 Télécommunications – Réseaux & Systèmes</p>
+            <button class="btn-main" onclick="openModal('modal-profil')">VOIR LE PROFIL</button>
+        </header>
+
+        <nav class="main-nav">
+            <button class="nav-card bg-blue" onclick="openModal('modal-cv')">
+                <i class="fas fa-file-pdf"></i> TÉLÉCHARGEMENT CV
+            </button>
+            <button class="nav-card bg-green" onclick="openModal('modal-contact')">
+                <i class="fas fa-envelope"></i> CONTACT
+            </button>
+            <button class="nav-card bg-orange" onclick="openModal('modal-links')">
+                <i class="fas fa-link"></i> LIENS EXTERNES
+            </button>
+            <button class="nav-card bg-yellow" onclick="openModal('modal-projets')">
+                <i class="fas fa-project-diagram"></i> PROJETS RÉALISÉS
+            </button>
+            <button class="nav-card bg-purple" onclick="openModal('modal-temoignages')">
+                <i class="fas fa-comment-dots"></i> TÉMOIGNAGES
+            </button>
+            <button class="nav-card bg-red" onclick="openModal('modal-news')">
+                <i class="fas fa-paper-plane"></i> NEWSLETTER
+            </button>
+        </nav>
+    </div>
+
+    <div id="modal-profil" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-profil')">&times;</span>
+            <h2>RÉSUMÉ PROFESSIONNEL</h2>
+            <p>"Étudiant dynamique en fin de cycle de Licence en Télécommunications... Mon objectif est de concevoir des solutions connectées, sécurisées et optimisées."</p>
+            <hr>
+            <h3>FORMATION ACADÉMIQUE</h3>
+            <ul>
+                <li><strong>2023 - 2026 :</strong> Licence 3 en Télécommunications (ES2I Itasy)</li>
+                <li><strong>2023 :</strong> Baccalauréat Scientifique Série C</li>
+            </ul>
+            <hr>
+            <h3>COMPÉTENCES TECHNIQUES</h3>
+            <p>Réseaux (Cisco, VLAN, OSPF), Systèmes (Linux Debian/Ubuntu), IA & Automatisation (Prompt Engineering, Make, Zapier).</p>
+            <hr>
+            <h3>CERTIFICATION</h3>
+            <p>Certificat en IA Générative et Automatisation - Orange Digital Center (ODC).</p>
+        </div>
+    </div>
+
+    <div id="modal-cv" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-cv')">&times;</span>
+            <h2>TÉLÉCHARGER LE CV</h2>
+            <p>Maintenant, tu peux télécharger le cv en cliquant sur le bouton ci-dessous :</p>
+            <a href="assets/CV.pdf" class="btn-download" download>📥 Télécharger PDF</a>
+        </div>
+    </div>
+
+    <div id="modal-contact" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-contact')">&times;</span>
+            <h2>CONTACTEZ-MOI</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Nom (Ex: Tiavina)" required>
+                <input type="email" placeholder="Email (princiotiaviniaina...)" required>
+                <input type="text" placeholder="Objet (Ex: Proposition de Stage)">
+                <textarea placeholder="Votre message..."></textarea>
+                <button type="submit" class="btn-submit">Envoyer le message</button>
+            </form>
+            <div class="direct-contact">
+                <p>📞 +261 38 53 132 94</p>
+                <p>📍 Andranomena Ambohimanarina, Tana VI</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-links" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-links')">&times;</span>
+            <h2>LIENS EXTERNES</h2>
+            <div class="link-item">
+                <a href="https://github.com/tiavina" target="_blank"><strong>GitHub</strong></a>
+                <p>Explorez mes dépôts : NetConfig-Automation, Debian-Server-Hardening.</p>
+            </div>
+            <div class="link-item">
+                <a href="https://www.linkedin.com/in/tiavina-ramarolahy-552177364" target="_blank"><strong>LinkedIn</strong></a>
+                <p>Mon parcours professionnel et mes certifications ODC.</p>
+            </div>
+            <div class="link-item">
+                <a href="https://tiavina.pythonanywhere.com" target="_blank"><strong>Site Personnel</strong></a>
+                <p>Vue d'ensemble interactive de mon parcours.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-projets" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-projets')">&times;</span>
+            <h2>PROJETS RÉALISÉS</h2>
+            <div class="project-box">
+                <img src="assets/projet1.jpg" alt="Projet Réseau">
+                <h3>Infrastructure Réseau Multi-sites</h3>
+                <p>Cisco Packet Tracer, OSPF, VLANs, ACLs.</p>
+            </div>
+            <div class="project-box">
+                <img src="assets/projet2.jpg" alt="VoIP">
+                <h3>Serveur de Téléphonie IP (VoIP)</h3>
+                <p>Asterisk, SIP, Linux Debian.</p>
+            </div>
+            <div class="project-box">
+                <img src="assets/projet3.jpg" alt="IA">
+                <h3>Assistant IA Management Incidents</h3>
+                <p>OpenAI API, Make/Zapier, Python.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-temoignages" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-temoignages')">&times;</span>
+            <h2>TÉMOIGNAGES</h2>
+            <blockquote>"Princio est un étudiant rigoureux... sa maîtrise Linux/Cisco est prometteuse." - Enseignant ⭐⭐⭐⭐⭐</blockquote>
+            <hr>
+            <h2>NEWSLETTER</h2>
+            <p>Restez à l’écoute de l’innovation.</p>
+            <input type="email" placeholder="Entrez votre email...">
+            <button class="btn-submit">S’inscrire à la veille</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) { document.getElementById(id).style.display = "block"; }
+        function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        window.onclick = function(event) { if (event.target.className === 'modal') { event.target.style.display = "none"; } }
+    </script>
+</body>
+</html>
