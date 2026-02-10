@@ -1,115 +1,134 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Princio | Portfolio Télécom</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Tiavina Princio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
 
-<!-- ACCUEIL -->
-<section id="home" class="home">
-  <div class="profile-card">
-    <img src="assets/images/profile.jpg" alt="Photo de Princio">
-    <h1>RAKOTOVAO Tiaviniaina Princio</h1>
-    <p>Étudiant L3 Télécommunications – Réseaux & Systèmes</p>
-  </div>
+    <div class="container" id="main-menu">
+        <header class="profile-header">
+            <div class="profile-img">
+                <img src="profile.jpg" alt="Rakotovao Tiaviniaina Princio">
+            </div>
+            <h1>RAKOTOVAO Tiaviniaina Princio</h1>
+            <p class="subtitle">Étudiant L3 Télécommunications – Réseaux & Systèmes</p>
+        </header>
 
-  <div class="menu">
-    <button onclick="showSection('profil')">👤 Profil</button>
-    <button onclick="showSection('formation')">🎓 Formation</button>
-    <button onclick="showSection('projets')">💼 Projets</button>
-    <button onclick="showSection('liens')">🌐 Liens</button>
-    <button onclick="showSection('temoignages')">💬 Témoignages</button>
-    <button onclick="showSection('contact')">✉️ Contact</button>
-  </div>
-</section>
+        <nav class="button-grid">
+            <button class="btn btn-red" onclick="openModal('profile')">VOIR LE PROFIL</button>
+            <button class="btn btn-blue" onclick="openModal('contact')">CONTACT</button>
+            <button class="btn btn-green" onclick="openModal('links')">LIENS EXTERNES</button>
+            <button class="btn btn-yellow" onclick="openModal('projects')">PROJETS RÉALISÉS</button>
+            <button class="btn btn-purple" onclick="openModal('testimonials')">TÉMOIGNAGES</button>
+            <button class="btn btn-gray" onclick="openModal('newsletter')">NEWSLETTER</button>
+        </nav>
+    </div>
 
-<!-- PROFIL -->
-<section id="profil" class="section">
-<button class="back" onclick="goHome()">⬅ Retour</button>
-<h2>Résumé Professionnel</h2>
-<p>
-Étudiant dynamique en fin de cycle de Licence en Télécommunications,
-spécialisé en Réseaux et Systèmes. Passionné par l’infrastructure IT,
-l’IA générative et l’automatisation.
-</p>
-<a class="cv" href="assets/cv/CV_Tiaviniaina_Princio.pdf" download>Télécharger CV</a>
-</section>
+    <div id="modal-profile" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('profile')">&times; Fermer</span>
+            <h2><i class="fas fa-user"></i> Mon Profil</h2>
+            <div class="content-body">
+                <h3>Résumé Professionnel</h3>
+                <p>"Étudiant dynamique en fin de cycle de Licence en Télécommunications... (IA générative et automatisation)."</p>
+                <hr>
+                <h3>Formation Académique</h3>
+                <ul>
+                    <li><strong>2023 - 2026 :</strong> Licence 3 en Télécommunications (ES2I)</li>
+                    <li><strong>2023 :</strong> Baccalauréat Scientifique Série C</li>
+                </ul>
+                <hr>
+                <h3>Compétences</h3>
+                <p>Réseaux (Cisco), Systèmes (Linux), VoIP (Asterisk), IA & Automatisation (Make, Zapier).</p>
+                <a href="cv.pdf" class="download-btn" download><i class="fas fa-file-pdf"></i> Télécharger le CV (PDF)</a>
+            </div>
+        </div>
+    </div>
 
-<!-- FORMATION -->
-<section id="formation" class="section">
-<button class="back" onclick="goHome()">⬅ Retour</button>
-<h2>Formation & Compétences</h2>
-<ul>
-<li>Licence 3 Télécommunications – ES2I</li>
-<li>Réseaux Cisco, VLAN, OSPF</li>
-<li>Linux, DNS, DHCP, VoIP</li>
-<li>IA Générative & Automatisation (ODC)</li>
-</ul>
-</section>
+    <div id="modal-contact" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contact')">&times; Fermer</span>
+            <h2><i class="fas fa-envelope"></i> Contactez-moi</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Nom (Ex: Tiavina)" required>
+                <input type="email" placeholder="Email (princiotiaviniaina240906@gmail.com)" required>
+                <input type="text" placeholder="Objet (Proposition de Stage)">
+                <textarea placeholder="Votre message" rows="5"></textarea>
+                <button type="submit" class="send-btn">Envoyer le message</button>
+            </form>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> +261 38 53 132 94</p>
+                <p><i class="fas fa-map-marker-alt"></i> Andranomena Ambohimanarina, Antananarivo</p>
+            </div>
+        </div>
+    </div>
 
-<!-- PROJETS -->
-<section id="projets" class="section">
-<button class="back" onclick="goHome()">⬅ Retour</button>
-<h2>Projets Réalisés</h2>
+    <div id="modal-links" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('links')">&times; Fermer</span>
+            <h2><i class="fas fa-link"></i> Mes Liens</h2>
+            <div class="link-item">
+                <a href="https://github.com/tiavina" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <p>Explorez mes dépôts techniques et scripts d'automatisation.</p>
+            </div>
+            <div class="link-item">
+                <a href="https://www.linkedin.com/in/tiavina-ramarolahy-552177364" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <p>Mon parcours professionnel et certifications.</p>
+            </div>
+        </div>
+    </div>
 
-<div class="project">
-<img src="assets/images/projet1.jpg">
-<h3>Infrastructure Réseau Multi-sites</h3>
-</div>
+    <div id="modal-projects" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('projects')">&times; Fermer</span>
+            <h2><i class="fas fa-project-diagram"></i> Mes Projets</h2>
+            <div class="project-card">
+                <img src="projet1.jpg" alt="Projet Réseau">
+                <h3>Infrastructure Réseau Multi-sites</h3>
+                <p>Configuration OSPF, VLANs, ACLs sur Cisco Packet Tracer.</p>
+            </div>
+            <div class="project-card">
+                <img src="projet2.jpg" alt="VoIP">
+                <h3>Serveur VoIP Asterisk</h3>
+                <p>Installation d'un autocommutateur IP-PBX sous Debian.</p>
+            </div>
+        </div>
+    </div>
 
-<div class="project">
-<img src="assets/images/projet2.jpg">
-<h3>Serveur VoIP Asterisk</h3>
-</div>
+    <div id="modal-testimonials" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('testimonials')">&times; Fermer</span>
+            <h2><i class="fas fa-star"></i> Témoignages</h2>
+            <blockquote class="testimonial">
+                <p>"Princio est un étudiant rigoureux, doté d'une excellente compréhension des architectures réseaux."</p>
+                <cite>- Avis Enseignant ⭐⭐⭐⭐⭐</cite>
+            </blockquote>
+        </div>
+    </div>
 
-<div class="project">
-<img src="assets/images/projet3.jpg">
-<h3>Assistant IA Réseaux</h3>
-</div>
-</section>
+    <div id="modal-newsletter" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('newsletter')">&times; Fermer</span>
+            <h2><i class="fas fa-newspaper"></i> Newsletter</h2>
+            <p>Restez à l'écoute de l'innovation !</p>
+            <input type="email" placeholder="Votre Adresse Email">
+            <button class="send-btn">S’inscrire à la veille</button>
+        </div>
+    </div>
 
-<!-- LIENS -->
-<section id="liens" class="section">
-<button class="back" onclick="goHome()">⬅ Retour</button>
-<h2>Liens Externes</h2>
-<a href="https://github.com/tiavina" target="_blank">GitHub</a><br>
-<a href="https://www.linkedin.com/in/tiavina-ramarolahy-552177364" target="_blank">LinkedIn</a><br>
-<a href="https://tiavina.pythonanywhere.com" target="_blank">Site Personnel</a>
-</section>
-
-<!-- TEMOIGNAGES -->
-<section id="temoignages" class="section">
-<button class="back" onclick="goHome()">⬅ Retour</button>
-<p>⭐⭐⭐⭐⭐ “Étudiant rigoureux et très prometteur.”</p>
-<p>⭐⭐⭐⭐⭐ “Excellente maîtrise réseaux & IA.”</p>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-<button class="back" onclick="goHome()">⬅ Retour</button>
-<form>
-<input type="text" placeholder="Nom">
-<input type="email" placeholder="Email">
-<textarea placeholder="Message"></textarea>
-<button type="submit">Envoyer</button>
-</form>
-</section>
-
-<script>
-function showSection(id){
- document.getElementById("home").style.display="none";
- document.querySelectorAll(".section").forEach(s=>s.style.display="none");
- document.getElementById(id).style.display="block";
-}
-function goHome(){
- document.querySelectorAll(".section").forEach(s=>s.style.display="none");
- document.getElementById("home").style.display="flex";
-}
-</script>
-
+    <script>
+        function openModal(id) {
+            document.getElementById('modal-' + id).style.display = 'block';
+            document.getElementById('main-menu').style.filter = 'blur(5px)';
+        }
+        function closeModal(id) {
+            document.getElementById('modal-' + id).style.display = 'none';
+            document.getElementById('main-menu').style.filter = 'none';
+        }
+    </script>
 </body>
 </html>
