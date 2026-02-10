@@ -1,58 +1,115 @@
 <!DOCTYPE html>
-<html lang="mg">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - RAKOTOVAO Princio</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Princio | Portfolio Télécom</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <header class="profile-card">
-            <div class="image-container">
-                <img src="profile.jpg" alt="Profile" class="profile-img" onerror="this.src='profile.JPG'">
-            </div>
-            <h1>RAKOTOVAO Tiaviniaina Princio</h1>
-            <p class="job-title">Étudiant L3 Télécommunications – Réseaux & Systèmes</p>
-            <button class="btn-profile">VOIR LE PROFIL</button>
-        </header>
+<!-- ACCUEIL -->
+<section id="home" class="home">
+  <div class="profile-card">
+    <img src="assets/images/profile.jpg" alt="Photo de Princio">
+    <h1>RAKOTOVAO Tiaviniaina Princio</h1>
+    <p>Étudiant L3 Télécommunications – Réseaux & Systèmes</p>
+  </div>
 
-        <nav class="links-container">
-            <a href="cv-tiavina.pdf" class="btn link-blue" target="_blank">📄 TÉLÉCHARGEMENT CV</a>
-            <a href="mailto:email@example.com" class="btn link-green">📧 CONTACT</a>
-            <a href="#" class="btn link-orange">🔗 LIENS EXTERNES</a>
-            <a href="#projects" class="btn link-yellow">🚀 PROJETS RÉALISÉS</a>
-        </nav>
+  <div class="menu">
+    <button onclick="showSection('profil')">👤 Profil</button>
+    <button onclick="showSection('formation')">🎓 Formation</button>
+    <button onclick="showSection('projets')">💼 Projets</button>
+    <button onclick="showSection('liens')">🌐 Liens</button>
+    <button onclick="showSection('temoignages')">💬 Témoignages</button>
+    <button onclick="showSection('contact')">✉️ Contact</button>
+  </div>
+</section>
 
-        <section id="projects" class="projects-section">
-            <h2>PROJETS RÉALISÉS</h2>
-            
-            <div class="project-item">
-                <img src="projet1.jpg" alt="P1" onerror="this.src='projet1.JPG'">
-                <div class="project-info">
-                    <h3>Infrastructure Réseau</h3>
-                    <p>Cisco Packet Tracer, OSPF, VLANs.</p>
-                </div>
-            </div>
+<!-- PROFIL -->
+<section id="profil" class="section">
+<button class="back" onclick="goHome()">⬅ Retour</button>
+<h2>Résumé Professionnel</h2>
+<p>
+Étudiant dynamique en fin de cycle de Licence en Télécommunications,
+spécialisé en Réseaux et Systèmes. Passionné par l’infrastructure IT,
+l’IA générative et l’automatisation.
+</p>
+<a class="cv" href="assets/cv/CV_Tiaviniaina_Princio.pdf" download>Télécharger CV</a>
+</section>
 
-            <div class="project-item">
-                <img src="projet2.jpg" alt="P2" onerror="this.src='projet2.JPG'">
-                <div class="project-info">
-                    <h3>Serveur VoIP</h3>
-                    <p>Asterisk, SIP, Linux Debian.</p>
-                </div>
-            </div>
+<!-- FORMATION -->
+<section id="formation" class="section">
+<button class="back" onclick="goHome()">⬅ Retour</button>
+<h2>Formation & Compétences</h2>
+<ul>
+<li>Licence 3 Télécommunications – ES2I</li>
+<li>Réseaux Cisco, VLAN, OSPF</li>
+<li>Linux, DNS, DHCP, VoIP</li>
+<li>IA Générative & Automatisation (ODC)</li>
+</ul>
+</section>
 
-            <div class="project-item">
-                <img src="projet3.jpg" alt="P3" onerror="this.src='projet3.JPG'">
-                <div class="project-info">
-                    <h3>Assistant IA</h3>
-                    <p>OpenAI API, Python, Make.</p>
-                </div>
-            </div>
-        </section>
-    </div>
+<!-- PROJETS -->
+<section id="projets" class="section">
+<button class="back" onclick="goHome()">⬅ Retour</button>
+<h2>Projets Réalisés</h2>
+
+<div class="project">
+<img src="assets/images/projet1.jpg">
+<h3>Infrastructure Réseau Multi-sites</h3>
+</div>
+
+<div class="project">
+<img src="assets/images/projet2.jpg">
+<h3>Serveur VoIP Asterisk</h3>
+</div>
+
+<div class="project">
+<img src="assets/images/projet3.jpg">
+<h3>Assistant IA Réseaux</h3>
+</div>
+</section>
+
+<!-- LIENS -->
+<section id="liens" class="section">
+<button class="back" onclick="goHome()">⬅ Retour</button>
+<h2>Liens Externes</h2>
+<a href="https://github.com/tiavina" target="_blank">GitHub</a><br>
+<a href="https://www.linkedin.com/in/tiavina-ramarolahy-552177364" target="_blank">LinkedIn</a><br>
+<a href="https://tiavina.pythonanywhere.com" target="_blank">Site Personnel</a>
+</section>
+
+<!-- TEMOIGNAGES -->
+<section id="temoignages" class="section">
+<button class="back" onclick="goHome()">⬅ Retour</button>
+<p>⭐⭐⭐⭐⭐ “Étudiant rigoureux et très prometteur.”</p>
+<p>⭐⭐⭐⭐⭐ “Excellente maîtrise réseaux & IA.”</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+<button class="back" onclick="goHome()">⬅ Retour</button>
+<form>
+<input type="text" placeholder="Nom">
+<input type="email" placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button type="submit">Envoyer</button>
+</form>
+</section>
+
+<script>
+function showSection(id){
+ document.getElementById("home").style.display="none";
+ document.querySelectorAll(".section").forEach(s=>s.style.display="none");
+ document.getElementById(id).style.display="block";
+}
+function goHome(){
+ document.querySelectorAll(".section").forEach(s=>s.style.display="none");
+ document.getElementById("home").style.display="flex";
+}
+</script>
 
 </body>
 </html>
